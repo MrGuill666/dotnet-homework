@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeSearchServiceLibrary", "TradeSearchServiceLibrary\TradeSearchServiceLibrary.csproj", "{34427725-2D10-403B-A26E-D483C92BE351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeSearchClient", "TradeSearchClient\TradeSearchClient.csproj", "{83CD4A6F-1FAC-4038-85F6-ADE746EAAD6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{34427725-2D10-403B-A26E-D483C92BE351} = {34427725-2D10-403B-A26E-D483C92BE351}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34427725-2D10-403B-A26E-D483C92BE351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34427725-2D10-403B-A26E-D483C92BE351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34427725-2D10-403B-A26E-D483C92BE351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34427725-2D10-403B-A26E-D483C92BE351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83CD4A6F-1FAC-4038-85F6-ADE746EAAD6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83CD4A6F-1FAC-4038-85F6-ADE746EAAD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83CD4A6F-1FAC-4038-85F6-ADE746EAAD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83CD4A6F-1FAC-4038-85F6-ADE746EAAD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

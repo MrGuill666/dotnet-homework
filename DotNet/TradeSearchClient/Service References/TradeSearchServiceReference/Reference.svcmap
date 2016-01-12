@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="71cf30f7-c692-4edb-8218-a6ebe38276f9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="0dcac955-c61b-46a2-b9e2-633c9f78978e" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="20b56eb4-7bc2-4773-b4f1-e66b709cc2ee" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="16aaffd9-de23-42c9-bc92-f1882fb345f2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="bae6d610-1604-4d21-af09-0057c2075344" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" />
+    <MetadataFile FileName="TradeSearchServiceLibrary.Model.xsd" MetadataType="Schema" ID="5e0006b6-b10c-4359-b8fe-ac4434331c4a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/TradeSearchServiceLibrary/TradeSearchService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

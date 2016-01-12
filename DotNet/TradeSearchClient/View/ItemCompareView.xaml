@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="TradeSearchClient.View.ItemCompareView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TradeSearchClient.View"
+             mc:Ignorable="d" 
+             xmlns:model="clr-namespace:TradeSearchClient.ViewModel"
+             d:DesignHeight="100" d:DesignWidth="600">
+    <d:Page.DataContext>
+        <model:ItemViewModel/>
+    </d:Page.DataContext>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{Binding Name}" Width="200" TextWrapping="Wrap" VerticalAlignment="Center"/>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Buy at:" HorizontalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Center">
+                    <Hyperlink NavigateUri="{Binding BuyAtURL}" RequestNavigate="Hyperlink_RequestNavigate">
+                                    <TextBlock Text="{Binding BuyAtName}"/>
+                                </Hyperlink>
+                </TextBlock>
+                <TextBlock Text="Sell at:" HorizontalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Center">
+                    <Hyperlink NavigateUri="{Binding SellAtURL}" RequestNavigate="Hyperlink_RequestNavigate">
+                                    <TextBlock Text="{Binding SellAtName}"/>
+                                </Hyperlink>
+                </TextBlock>
+                <TextBlock Text="Profit:" HorizontalAlignment="Center"/>
+                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+                    <Run Text="{Binding Path=Profit, Mode=OneWay}"/>
+                    <Run Text=" ("/>
+                    <Run Text="{Binding Path=ProfitRate, Mode=OneWay}"/>
+                    <Run Text="%)"/>
+                </TextBlock>
+            </StackPanel>
+            <ListView ItemsSource="{Binding Info}" >
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Width="100">
+                            <TextBlock HorizontalAlignment="Center">          
+                                <Hyperlink NavigateUri="{Binding BotURL}" RequestNavigate="Hyperlink_RequestNavigate">
+                                    <TextBlock Text="{Binding BotName}"/>
+                                </Hyperlink>
+                            </TextBlock>
+
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+                                    <Run Text="{Binding Path=SellPrice, Mode=OneWay}" />
+                                    <Run> | </Run>
+                                    <Run Text="{Binding Path=BuyPrice, Mode=OneWay}" />
+                            </TextBlock>
+                            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+                                    <Run Text="{Binding Path=Stock, Mode=OneWay}" />
+                                    <Run> (</Run><Run Text="{Binding Path=Max, Mode=OneWay}" /><Run>)</Run>
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
