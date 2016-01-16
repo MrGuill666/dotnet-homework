@@ -70,6 +70,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DesignData\DesignItem.cs" />
+    <Compile Include="DesignData\DesignItemList.cs" />
     <Compile Include="Helper\DataResource.cs" />
     <Compile Include="Service References\TradeSearchServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

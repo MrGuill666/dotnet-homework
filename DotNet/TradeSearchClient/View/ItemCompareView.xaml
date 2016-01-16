@@ -5,44 +5,44 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TradeSearchClient.View"
              mc:Ignorable="d" 
-             xmlns:model="clr-namespace:TradeSearchClient.ViewModel"
+             xmlns:model="clr-namespace:TradeSearchClient.DesignData"
              d:DesignHeight="100" d:DesignWidth="600">
     <d:Page.DataContext>
-        <model:ItemViewModel/>
+        <model:DesignItem/>
     </d:Page.DataContext>
-    <Grid>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="300"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition MinHeight="20" MaxHeight="20"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Text="{Binding Name}" Width="200" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <TextBlock Grid.Column="1" Text="{Binding Name}"  TextWrapping="Wrap" />
         <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                <TextBlock Text="Buy at:" HorizontalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Center">
+            <TextBlock Text="Buy at:" HorizontalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center">
                     <Hyperlink NavigateUri="{Binding BuyAtURL}" RequestNavigate="Hyperlink_RequestNavigate">
                                     <TextBlock Text="{Binding BuyAtName}"/>
                                 </Hyperlink>
                 </TextBlock>
-                <TextBlock Text="Sell at:" HorizontalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Center">
+            <TextBlock Text="Sell at:" HorizontalAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Center">
                     <Hyperlink NavigateUri="{Binding SellAtURL}" RequestNavigate="Hyperlink_RequestNavigate">
                                     <TextBlock Text="{Binding SellAtName}"/>
                                 </Hyperlink>
                 </TextBlock>
-                <TextBlock Text="Profit:" HorizontalAlignment="Center"/>
-                <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+            <TextBlock Text="Profit:" HorizontalAlignment="Center"/>
+            <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
                     <Run Text="{Binding Path=Profit, Mode=OneWay}"/>
                     <Run Text=" ("/>
                     <Run Text="{Binding Path=ProfitRate, Mode=OneWay}"/>
                     <Run Text="%)"/>
-                </TextBlock>
-            </StackPanel>
-        <Expander Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" ExpandDirection="Down">
+            </TextBlock>
+        </StackPanel>
+        <Expander Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Left" ExpandDirection="Down">
             <ListView ItemsSource="{Binding Info}" >
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -71,8 +71,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            </Expander>
+        </Expander>
 
-        
+
     </Grid>
 </UserControl>

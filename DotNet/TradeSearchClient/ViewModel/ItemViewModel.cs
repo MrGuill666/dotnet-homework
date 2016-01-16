@@ -35,19 +35,6 @@ namespace TradeSearchClient.ViewModel
             ProfitRate = 0;
             BuyAtName = "none";
             SellAtName = "none";
-           /* 
-            Info.Add(new TradeItem()
-            {
-                Name = text,
-                BotName="TestBot",
-                BotURL="https://google.com",
-                SellPrice=666,
-                BuyPrice=999,
-                Stock=1,
-                Max=2,
-                ID=1234
-                
-            });*/
         }
 
         public void Analyze()
