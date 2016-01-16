@@ -11,9 +11,17 @@
         <model:ItemViewModel/>
     </d:Page.DataContext>
     <Grid>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{Binding Name}" Width="200" TextWrapping="Wrap" VerticalAlignment="Center"/>
-            <StackPanel Orientation="Vertical">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Text="{Binding Name}" Width="200" TextWrapping="Wrap" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Center">
                 <TextBlock Text="Buy at:" HorizontalAlignment="Center"/>
                 <TextBlock HorizontalAlignment="Center">
                     <Hyperlink NavigateUri="{Binding BuyAtURL}" RequestNavigate="Hyperlink_RequestNavigate">
@@ -34,6 +42,7 @@
                     <Run Text="%)"/>
                 </TextBlock>
             </StackPanel>
+        <Expander Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" ExpandDirection="Down">
             <ListView ItemsSource="{Binding Info}" >
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -62,7 +71,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            </Expander>
 
-        </StackPanel>
+        
     </Grid>
 </UserControl>

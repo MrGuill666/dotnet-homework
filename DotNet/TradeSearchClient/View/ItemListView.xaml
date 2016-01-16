@@ -26,22 +26,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0" Command="{Binding UpdateCommand}">Update database</Button>
-        <TextBlock Grid.Column="1" Width="100" HorizontalAlignment="Center" Text="{Binding Message}"/>
+        <Button Grid.Column="0"  HorizontalAlignment="Left" Command="{Binding UpdateCommand}">Update database</Button>
+        <TextBlock Grid.Column="1" Width="200" HorizontalAlignment="Stretch" Text="{Binding Message}"/>
         <Button  Grid.Column="2" HorizontalAlignment="Right" Command="{Binding RefreshCommand}">Refresh</Button>
-        
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
-            <TextBlock >Name</TextBlock>
-            <TextBox Text="{Binding Path=Filter, Mode=TwoWay, UpdateSourceTrigger=Default}"></TextBox>
-        </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2">
-            <TextBlock HorizontalAlignment="Right">Profit</TextBlock>
-            <TextBox Text="{Binding Path=Filter, Mode=TwoWay}"></TextBox>
-        </StackPanel>
+        <Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Header="Filters" IsExpanded="False">
+            <v:FilterView HorizontalAlignment="Left" Margin="19,0,0,0"/>
+        </Expander>
 
 
-        <ListView Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding Items}">
+
+
+        <ListView Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding Items}" HorizontalAlignment="Stretch">
 
             <ListView.ItemTemplate>
                 <DataTemplate>

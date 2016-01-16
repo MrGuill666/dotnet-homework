@@ -70,15 +70,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\DataResource.cs" />
     <Compile Include="Service References\TradeSearchServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="ValidationRules\OnlyPositiveNumbersRule.cs" />
+    <Compile Include="ValidationRules\RangeValidationRule.cs" />
     <Compile Include="ViewModel\ItemListViewModel.cs" />
     <Compile Include="ViewModel\ItemViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="View\FilterView.xaml.cs">
+      <DependentUpon>FilterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ItemCompareView.xaml.cs">
       <DependentUpon>ItemCompareView.xaml</DependentUpon>
     </Compile>
@@ -97,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\FilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ItemCompareView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

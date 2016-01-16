@@ -14,6 +14,8 @@ namespace TradeSearchClient.ViewModel
         public int Profit { get; private set; }
         public int ProfitRate { get; private set; }
         public string BuyAtName { get; private set; }
+        public int BuyPrice { get; private set; }
+        public int SellPrice { get; private set; }
         public string SellAtName { get; private set; }
         public string BuyAtURL { get; private set; }
         public string SellAtURL { get; private set; }
@@ -79,11 +81,13 @@ namespace TradeSearchClient.ViewModel
             {
                 BuyAtName = buyAt.BotName;
                 BuyAtURL = buyAt.BotURL;
+                BuyPrice = buyAt.SellPrice;
             }
             if (sellAt != null)
             {
                 SellAtName = sellAt.BotName;
                 SellAtURL = sellAt.BotURL;
+                SellPrice = sellAt.BuyPrice;
             }
         }
         
