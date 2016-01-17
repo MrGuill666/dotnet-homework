@@ -25,11 +25,6 @@ namespace TradeSearchClient.View
         public ItemListView()
         {
             InitializeComponent();
-            
         }
-
-
-
-        
     }
 }

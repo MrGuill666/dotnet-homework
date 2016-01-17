@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    
+    <s:String x:Key="Filters">Szűrők</s:String>
+    <s:String x:Key="Update_database">Adatbázis frissítése</s:String>
+    <s:String x:Key="Refresh">Frissítés</s:String>
+    
+    <s:String x:Key="Name">Név</s:String>
+    <s:String x:Key="Minimum_profit">Minimum profit</s:String>
+    <s:String x:Key="Minimum_relative_profit">Minimum relatív profit</s:String>
+    <s:String x:Key="Sell_price_range">Eladási ár</s:String>
+    <s:String x:Key="Buy_price_range">Vételi ár</s:String>
+    <s:String x:Key="Exclude_sellers">Eladók kihagyása</s:String>
+    <s:String x:Key="Exclude_buyers">Vásárlók kihagyása</s:String>
+
+    <s:String x:Key="Sell_at">Add el itt</s:String>
+    <s:String x:Key="Buy_at">Vedd meg itt</s:String>
+    <s:String x:Key="Profit">Profit</s:String>
+
+    <s:String x:Key="Error_only_positive_numbers">Csak pozitív egész számokat lehet megadni!</s:String>
+
+    <s:String x:Key="Done">Kész</s:String>
+    <s:String x:Key="Error">Hiba</s:String>
+    <s:String x:Key="Getting_items">Tárgyak lekérése folyamatban...</s:String>
+    <s:String x:Key="DB_error">Adatbázis hiba</s:String>
+    <s:String x:Key="DB_update_finished">Adatbázis frissítése befejeződött</s:String>
+    <s:String x:Key="DB_updating">Adatbázis frissítés folyamatban</s:String>
+
+    <s:String x:Key="Language">Nyelv</s:String>
+
+</ResourceDictionary>

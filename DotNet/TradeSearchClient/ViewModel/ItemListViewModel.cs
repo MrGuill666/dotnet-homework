@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using TradeSearchClient.TradeSearchServiceReference;
 
@@ -53,16 +54,16 @@ namespace TradeSearchClient.ViewModel
         {
             using (TradeSearchServiceReference.TradeSearchServiceClient service = new TradeSearchServiceReference.TradeSearchServiceClient())
             {
-                Message = "Updating database";
+                Message = App.Current.FindResource("DB_updating") as string;
                 RaisePropertyChanged("Message");
                 try
                 {
                     await service.RefreshDatabaseAsync();
-                    Message = "Database Update Finished";
+                    Message = App.Current.FindResource("DB_update_finished") as string;
                 }
                 catch (Exception e)
                 {
-                    Message = "Database Error";
+                    Message = App.Current.FindResource("DB_error") as string;
                 }
                 RaisePropertyChanged("Message");
             }
@@ -75,16 +76,16 @@ namespace TradeSearchClient.ViewModel
                 _storedItems.Clear();
                 
                 TradeItem[] items;
-                Message = "Getting items...";
+                Message = App.Current.FindResource("Getting_items") as string;
                 RaisePropertyChanged("Message");
                 try
                 {
                     items= await service.GetItemsAsync();
-                    Message = "Done";
+                    Message = App.Current.FindResource("Done") as string; 
                 }
                 catch (Exception e)
                 {
-                    Message = "Error";
+                    Message = App.Current.FindResource("Error") as string;
                     return;
                 }
                 RaisePropertyChanged("Message");
@@ -178,6 +179,42 @@ namespace TradeSearchClient.ViewModel
         private string maxsp;
         public string MaxSellPrice { get { return maxsp; } set { maxsp = value; RaisePropertyChanged("MaxSellPrice"); } }
 
+        RelayCommand<Object> _changeToHungarianCommand;
+        public ICommand ChangeToHungarianCommand
+        {
+            get
+            {
+                if (_changeToHungarianCommand == null)
+                {
+                    _changeToHungarianCommand = new RelayCommand<Object>(a =>
+                    {
+                        
+                        ResourceDictionary dict = new ResourceDictionary();
+                        dict.Source = new Uri("..\\Resources\\StringResources_HU.xaml", UriKind.Relative);
+                        App.Current.Resources.MergedDictionaries.Add(dict);
+                    });
+                }
+                return _changeToHungarianCommand;
+            }
+        }
 
+        RelayCommand<Object> _changeToEnglishCommand;
+        public ICommand ChangeToEnglishCommand
+        {
+            get
+            {
+                if (_changeToEnglishCommand == null)
+                {
+                    _changeToEnglishCommand = new RelayCommand<Object>(a =>
+                    {
+
+                        ResourceDictionary dict = new ResourceDictionary();
+                        dict.Source = new Uri("..\\Resources\\StringResources.xaml", UriKind.Relative);
+                        App.Current.Resources.MergedDictionaries.Add(dict);
+                    });
+                }
+                return _changeToEnglishCommand;
+            }
+        }
     }
 }

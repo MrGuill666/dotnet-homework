@@ -13,8 +13,22 @@
         <model:DesignItemList/>
 
     </d:Page.DataContext>
-
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="{DynamicResource Language}">
+                    <MenuItem Header="_Magyar" Command="{Binding ChangeToHungarianCommand}"/>
+                    <MenuItem Header="_English" Command="{Binding ChangeToEnglishCommand}"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
+    
+    <Grid Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
@@ -23,27 +37,31 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="0"  HorizontalAlignment="Left" Command="{Binding UpdateCommand}">Update database</Button>
+        <Button Grid.Column="0"  HorizontalAlignment="Left" Command="{Binding UpdateCommand}" Content="{DynamicResource Update_database}"/>
+        
         <TextBlock Grid.Column="1" Width="200" HorizontalAlignment="Stretch" Text="{Binding Message}"/>
-        <Button  Grid.Column="2" HorizontalAlignment="Right" Command="{Binding RefreshCommand}">Refresh</Button>
+        <Button  Grid.Column="2" HorizontalAlignment="Right" Command="{Binding RefreshCommand}" Content="{DynamicResource Refresh}"/>
 
-        <Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Header="Filters" IsExpanded="False">
+        <Expander Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Header="{DynamicResource Filters}" IsExpanded="False">
             <v:FilterView HorizontalAlignment="Left" Margin="19,0,0,0"/>
         </Expander>
 
 
 
 
-        <ListView Grid.Row="2" Grid.ColumnSpan="3" ItemsSource="{Binding Items}" HorizontalAlignment="Stretch">
-
+        <ListView Grid.Row="3" Grid.ColumnSpan="3" ItemsSource="{Binding Items}" >
+            
+                
             <ListView.ItemTemplate>
-                <DataTemplate>
-                    <v:ItemCompareView/>
-                </DataTemplate>
+                    <DataTemplate>
+                        <v:ItemCompareView/>
+                    </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+    </Grid>
     </Grid>
 </UserControl>

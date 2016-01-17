@@ -34,10 +34,10 @@
     
     <Grid>
         <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0">
-            <TextBlock >Name</TextBlock>
+            <TextBlock Text="{DynamicResource Name}"/>
             <TextBox Text="{Binding Path=FilterName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             
-            <TextBlock>Minimum profit</TextBlock>
+            <TextBlock Text="{DynamicResource Minimum_profit}"/>
             <TextBox  Style="{StaticResource textBoxInError}">
                 <TextBox.Text>
                     <Binding  Path="MinimumProfit" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
@@ -48,7 +48,7 @@
                 </TextBox.Text>
             </TextBox>
 
-            <TextBlock>Relative minimum profit</TextBlock>
+            <TextBlock Text="{DynamicResource Minimum_relative_profit}"/>
             <TextBox  Style="{StaticResource textBoxInError}">
                 <TextBox.Text>
                     <Binding  Path="RelativeMinimumProfit" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged">
@@ -59,13 +59,13 @@
                 </TextBox.Text>
             </TextBox>
 
-            <TextBlock>Exclude sellers</TextBlock>
+            <TextBlock Text="{DynamicResource Exclude_sellers}"/>
             <TextBox Text="{Binding Path=ExcludeSellers, Mode=TwoWay}" IsEnabled="False"/>
 
-            <TextBlock>Exclude buyers</TextBlock>
+            <TextBlock Text="{DynamicResource Exclude_buyers}"/>
             <TextBox Text="{Binding Path=ExcludeBuyers, Mode=TwoWay}" IsEnabled="False"/>
 
-            <TextBlock>Sell price range</TextBlock>
+            <TextBlock Text="{DynamicResource Sell_price_range}"/>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -92,7 +92,7 @@
                     </TextBox.Text>
                 </TextBox>
             </Grid>
-            <TextBlock>Buy price range</TextBlock>
+            <TextBlock Text="{DynamicResource Buy_price_range}"/>
             
             <Grid>
 

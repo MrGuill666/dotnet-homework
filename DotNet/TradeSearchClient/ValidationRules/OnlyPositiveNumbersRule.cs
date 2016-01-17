@@ -7,6 +7,7 @@ using System.Windows.Controls;
 
 namespace TradeSearchClient.ValidationRules
 {
+    
     class OnlyPositiveNumbersRule: ValidationRule
     {
         public override ValidationResult Validate(object value, System.Globalization.CultureInfo cultureInfo)
@@ -22,7 +23,7 @@ namespace TradeSearchClient.ValidationRules
                 return new ValidationResult(true, null);
             }catch(Exception e)
             {
-                return new ValidationResult(false, "Only positive numbers accepted!");
+                return new ValidationResult(false, App.Current.FindResource("Error_only_positive_numbers"));
             }
         }
     }

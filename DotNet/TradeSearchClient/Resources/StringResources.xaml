@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    
+    <s:String x:Key="Filters">Filters</s:String>
+    <s:String x:Key="Update_database">Update database</s:String>
+    <s:String x:Key="Refresh">Refresh</s:String>
+    
+    <s:String x:Key="Name">Name</s:String>
+    <s:String x:Key="Minimum_profit">Minimum profit</s:String>
+    <s:String x:Key="Minimum_relative_profit">Minimum relative profit</s:String>
+    <s:String x:Key="Sell_price_range">Sell price range</s:String>
+    <s:String x:Key="Buy_price_range">Buy price range</s:String>
+    <s:String x:Key="Exclude_sellers">Exclude sellers</s:String>
+    <s:String x:Key="Exclude_buyers">Exclude buyers</s:String>
+
+    <s:String x:Key="Sell_at">Sell at</s:String>
+    <s:String x:Key="Buy_at">Buy at</s:String>
+    <s:String x:Key="Profit">Profit</s:String>
+
+    <s:String x:Key="Error_only_positive_numbers">Only positive numbers are accepted!</s:String>
+
+    <s:String x:Key="Done">Done</s:String>
+    <s:String x:Key="Error">Error</s:String>
+    <s:String x:Key="Getting_items">Getting items...</s:String>
+    <s:String x:Key="DB_error">Database error</s:String>
+    <s:String x:Key="DB_update_finished">Database update finished</s:String>
+    <s:String x:Key="DB_updating">Updating database</s:String>
+
+    <s:String x:Key="Language">Language</s:String>
+
+
+</ResourceDictionary>

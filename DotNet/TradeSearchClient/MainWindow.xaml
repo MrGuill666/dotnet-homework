@@ -1,13 +1,16 @@
-﻿<Window x:Class="TradeSearchClient.MainWindow"
+﻿<Controls:MetroWindow x:Class="TradeSearchClient.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:v="clr-namespace:TradeSearchClient.View"
+        xmlns:model="clr-namespace:TradeSearchClient.ViewModel"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
         Title="MainWindow" Height="350" Width="525"
         
         >
-    <Grid>
+    
+    <StackPanel>
         
         <v:ItemListView x:Name="ItemListView"></v:ItemListView>
 
-    </Grid>
-</Window>
+    </StackPanel>
+</Controls:MetroWindow>
